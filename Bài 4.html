@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPrime(number) {
+        let check = true;
+        if (number < 2) {
+            check = false
+        } else {
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    check = false;
+                    break;
+                }
+            }
+        }
+        return check;
+    }
+
+    let sum = 0;
+    for (let i = 0; i < 500; i++) {
+        if (isPrime(i) === true) {
+            sum += i;
+        }
+    }
+    alert("Tổng các số nguyên tố nhỏ hơn 500 là : " + sum);
+</script>
+</body>
+</html>
